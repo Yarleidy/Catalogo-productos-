@@ -74,4 +74,10 @@ Respuestas con formato `{ ok, mensaje, data }` (204 sin cuerpo al eliminar). Las
 
 - La consola del navegador no debe mostrar errores con el flujo completo.
 - Para cambiar el diseño (colores, tarjetas, tablas, modales) solo hay que tocar `public/`; el backend no depende de él.
-- Publicación: local con `npm start`, o en plataformas con disco persistente (Render/Railway). Vercel es serverless y de sistema de archivos de solo lectura, por lo que el JSON solo podría vivir en `/tmp` y los datos se perderían entre reinicios (ver guía §19).
+
+## Publicación
+
+- **Render (recomendado):** montar el repo de GitHub como *Web Service*, start `npm start`, y definir `JWT_SECRET`, `JWT_EXPIRES_IN`, `ADMIN_USER`, `ADMIN_PASSWORD` y `DB_PATH` en variables de entorno. En plan free el disco no es persistente: el JSON se re-siembra al reiniciar.
+- **Vercel:** servidorless de solo lectura. Ya está incluido el adaptador (`api/index.js` + `vercel.json`); hay que definir además `DB_PATH=/tmp/catalogo.json` en el panel. Los datos se pierden entre instancias, útil solo para demostraciones.
+
+> Nunca subir `.env` al repositorio; las variables se configuran en el panel de la plataforma.
