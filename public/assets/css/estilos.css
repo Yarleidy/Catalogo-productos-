@@ -4,8 +4,8 @@
   --color-texto: #1f2937;
   --color-texto-suave: #6b7280;
   --color-borde: #e5e7eb;
-  --color-primario: #4338ca;
-  --color-primario-activo: #3730a3;
+  --color-primario: #7c3aed;
+  --color-primario-activo: #6b21a8;
   --color-exito: #047857;
   --color-error: #b91c1c;
   --color-peligro: #dc2626;
@@ -98,7 +98,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #312e81 0%, #6d28d9 55%, #9333ea 100%);
+  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 55%, #a21caf 100%);
   padding: 20px;
 }
 
@@ -208,6 +208,7 @@ textarea:focus {
   background: var(--color-superficie);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);
+  border-top: 3px solid var(--color-primario);
   padding: 18px 20px;
 }
 
@@ -215,6 +216,7 @@ textarea:focus {
   margin: 0;
   font-size: 1.6rem;
   font-weight: 700;
+  color: var(--color-primario);
 }
 
 .tarjeta .etiqueta {
@@ -257,12 +259,12 @@ td {
 }
 
 th {
-  color: var(--color-texto-suave);
+  color: #6d28d9;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
-  background: #fafafa;
+  background: #f5f3ff;
 }
 
 tbody tr:last-child td {
@@ -270,7 +272,7 @@ tbody tr:last-child td {
 }
 
 tbody tr:hover {
-  background: #f9fafb;
+  background: #f9f5ff;
 }
 
 .columna-acciones {
