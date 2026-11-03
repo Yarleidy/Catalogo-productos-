@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso — Catálogo de productos</title>
+  <link rel="stylesheet" href="/assets/css/estilos.css" />
+</head>
+<body class="pagina-login">
+  <main class="card-login">
+    <p class="logo">◆</p>
+    <h1>Catálogo de productos</h1>
+    <p class="subtitulo">Inicia sesión para administrar el inventario</p>
+
+    <form id="formulario-login" novalidate>
+      <label for="usuario">Usuario</label>
+      <input id="usuario" name="usuario" type="text" autocomplete="username" required />
+
+      <label for="clave">Contraseña</label>
+      <input id="clave" name="clave" type="password" autocomplete="current-password" required />
+
+      <button type="submit" class="boton primario ancho">Ingresar</button>
+    </form>
+
+    <p id="mensaje-login" class="mensaje error oculto" role="alert"></p>
+  </main>
+
+  <script src="/assets/js/catalogo.js"></script>
+</body>
+</html>

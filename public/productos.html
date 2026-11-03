@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel — Catálogo de productos</title>
+  <link rel="stylesheet" href="/assets/css/estilos.css" />
+</head>
+<body class="pagina-panel">
+  <header class="barra">
+    <div class="marca">◆ Catálogo de productos</div>
+    <div class="barra-derecha">
+      <span id="nombre-usuario" class="nombre-usuario"></span>
+      <button id="boton-crear" class="boton primario">+ Nuevo producto</button>
+      <button id="boton-salir" class="boton fantasma">Salir</button>
+    </div>
+  </header>
+
+  <main id="panel-productos" class="panel">
+    <section id="estadisticas" class="tarjetas"></section>
+
+    <section class="herramientas">
+      <input
+        id="buscador"
+        type="search"
+        placeholder="Buscar por nombre, descripción o categoría…"
+        autocomplete="off"
+      />
+    </section>
+
+    <section class="tabla-envoltura">
+      <table id="tabla-productos">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th class="columna-acciones">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-productos"></tbody>
+      </table>
+      <p id="sin-productos" class="mensaje oculto">No hay productos que coincidan con la búsqueda.</p>
+    </section>
+  </main>
+
+  <div id="overlay-modal" class="overlay oculto">
+    <form id="formulario-producto" class="modal" novalidate>
+      <h2 id="titulo-modal">Nuevo producto</h2>
+
+      <label for="campo-nombre">Nombre</label>
+      <input id="campo-nombre" type="text" required />
+
+      <label for="campo-descripcion">Descripción</label>
+      <textarea id="campo-descripcion" rows="2"></textarea>
+
+      <div class="campos-dobles">
+        <div>
+          <label for="campo-precio">Precio</label>
+          <input id="campo-precio" type="number" step="0.01" min="0.01" required />
+        </div>
+        <div>
+          <label for="campo-stock">Stock</label>
+          <input id="campo-stock" type="number" step="1" min="0" required />
+        </div>
+      </div>
+
+      <label for="campo-categoria">Categoría</label>
+      <input id="campo-categoria" type="text" />
+
+      <div class="modal-acciones">
+        <button type="button" class="boton fantasma" id="boton-cancelar">Cancelar</button>
+        <button type="submit" class="boton primario">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="toast" class="toast oculto" role="status"></div>
+
+  <script src="/assets/js/catalogo.js"></script>
+</body>
+</html>

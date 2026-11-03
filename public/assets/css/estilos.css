@@ -1,0 +1,384 @@
+:root {
+  --color-fondo: #f4f6fb;
+  --color-superficie: #ffffff;
+  --color-texto: #1f2937;
+  --color-texto-suave: #6b7280;
+  --color-borde: #e5e7eb;
+  --color-primario: #4338ca;
+  --color-primario-activo: #3730a3;
+  --color-exito: #047857;
+  --color-error: #b91c1c;
+  --color-peligro: #dc2626;
+  --radio: 12px;
+  --sombra: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --fuente: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.mensaje {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+}
+
+.mensaje.error {
+  color: var(--color-error);
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.boton:active {
+  transform: translateY(1px);
+}
+
+.boton.primario {
+  background: var(--color-primario);
+  color: #fff;
+}
+
+.boton.primario:hover {
+  background: var(--color-primario-activo);
+}
+
+.boton.fantasma {
+  background: transparent;
+  color: var(--color-texto-suave);
+  border: 1px solid var(--color-borde);
+}
+
+.boton.fantasma:hover {
+  color: var(--color-texto);
+  background: #f9fafb;
+}
+
+.boton.pequeno {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.boton.peligro {
+  background: transparent;
+  color: var(--color-peligro);
+  border: 1px solid #fecaca;
+}
+
+.boton.peligro:hover {
+  background: #fef2f2;
+}
+
+.boton.ancho {
+  width: 100%;
+}
+
+/* ---------- Login ---------- */
+.pagina-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #312e81 0%, #6d28d9 55%, #9333ea 100%);
+  padding: 20px;
+}
+
+.card-login {
+  width: 100%;
+  max-width: 380px;
+  background: var(--color-superficie);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 36px 32px;
+  text-align: center;
+}
+
+.card-login .logo {
+  font-size: 2rem;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.card-login h1 {
+  font-size: 1.4rem;
+  margin: 6px 0 4px;
+}
+
+.card-login .subtitulo {
+  color: var(--color-texto-suave);
+  font-size: 0.92rem;
+  margin: 0 0 24px;
+}
+
+/* ---------- Formularios ---------- */
+label {
+  display: block;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fafafa;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 0;
+  border-color: var(--color-primario);
+  background: #fff;
+}
+
+.card-login .boton {
+  margin-top: 22px;
+}
+
+/* ---------- Barra superior ---------- */
+.barra {
+  background: var(--color-superficie);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.marca {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.barra-derecha {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nombre-usuario {
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- Panel ---------- */
+.panel {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.tarjeta {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 18px 20px;
+}
+
+.tarjeta .numero {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.tarjeta .etiqueta {
+  margin: 4px 0 0;
+  color: var(--color-texto-suave);
+  font-size: 0.85rem;
+}
+
+.herramientas {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+#buscador {
+  max-width: 460px;
+  background: #fff;
+}
+
+/* ---------- Tabla ---------- */
+.tabla-envoltura {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-borde);
+  font-size: 0.92rem;
+}
+
+th {
+  color: var(--color-texto-suave);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  background: #fafafa;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+.columna-acciones {
+  text-align: right;
+}
+
+td.acciones {
+  text-align: right;
+  white-space: nowrap;
+}
+
+td .boton + .boton {
+  margin-left: 6px;
+}
+
+.stock-bajo {
+  color: var(--color-peligro);
+  font-weight: 700;
+}
+
+.stock-origen::after {
+  content: " ⚠";
+}
+
+/* ---------- Modal ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+.modal {
+  background: var(--color-superficie);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  width: 100%;
+  max-width: 440px;
+  padding: 28px 28px 24px;
+}
+
+.modal h2 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.modal-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.campos-dobles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  box-shadow: var(--sombra);
+  z-index: 20;
+}
+
+.toast.exito {
+  background: var(--color-exito);
+}
+
+.toast.error {
+  background: var(--color-error);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .panel {
+    padding: 16px;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .barra {
+    padding: 12px 16px;
+  }
+
+  .campos-dobles {
+    grid-template-columns: 1fr;
+  }
+}
